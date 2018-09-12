@@ -5,16 +5,24 @@
   
 
   
-  <title>&#39;gitlab&#39; | minitong&#39;s blog</title>
+  <title>gitlab | minitong&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="article">
-<meta property="og:title" content="&#39;gitlab&#39;">
+  <meta name="description" content="开始一个项目先fork gitlab上项目复制链接，克隆到本地：eg: 项目链接地址：https://gitlab.com/dcarchain/app-downloader.git  本地文件名：app-downloader12git clone 链接地址 文件名eg: git clone https://gitlab.com/dcarchain/app-downloader.git app-do">
+<meta property="og:type" content="article">
+<meta property="og:title" content="gitlab">
 <meta property="og:url" content="http://yoursite.com/2018/09/12/gitlab/index.html">
 <meta property="og:site_name" content="minitong&#39;s blog">
+<meta property="og:description" content="开始一个项目先fork gitlab上项目复制链接，克隆到本地：eg: 项目链接地址：https://gitlab.com/dcarchain/app-downloader.git  本地文件名：app-downloader12git clone 链接地址 文件名eg: git clone https://gitlab.com/dcarchain/app-downloader.git app-do">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-09-12T07:32:09.420Z">
+<meta property="og:image" content="http://yoursite.com/img/20180912/01.png">
+<meta property="og:image" content="http://yoursite.com/img/20180912/02.png">
+<meta property="og:image" content="http://yoursite.com/img/20180912/03.png">
+<meta property="og:image" content="http://yoursite.com/img/20180912/04.png">
+<meta property="og:updated_time" content="2018-09-12T09:39:40.253Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="&#39;gitlab&#39;">
+<meta name="twitter:title" content="gitlab">
+<meta name="twitter:description" content="开始一个项目先fork gitlab上项目复制链接，克隆到本地：eg: 项目链接地址：https://gitlab.com/dcarchain/app-downloader.git  本地文件名：app-downloader12git clone 链接地址 文件名eg: git clone https://gitlab.com/dcarchain/app-downloader.git app-do">
+<meta name="twitter:image" content="http://yoursite.com/img/20180912/01.png">
   
     <link rel="alternate" href="/atom.xml" title="minitong&#39;s blog" type="application/atom+xml">
   
@@ -75,7 +83,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      &#39;gitlab&#39;
+      gitlab
     </h1>
   
 
@@ -83,11 +91,45 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <h2 id="开始一个项目"><a href="#开始一个项目" class="headerlink" title="开始一个项目"></a>开始一个项目</h2><p>先fork gitlab上项目<br>复制链接，克隆到本地：<br>eg: 项目链接地址：<a href="https://gitlab.com/dcarchain/app-downloader.git" target="_blank" rel="noopener">https://gitlab.com/dcarchain/app-downloader.git</a>  本地文件名：app-downloader<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> 链接地址 文件名</span><br><span class="line">eg: git <span class="built_in">clone</span> https://gitlab.com/dcarchain/app-downloader.git app-downloader</span><br></pre></td></tr></table></figure></p>
+<hr>
+<h2 id="项目主分支有变动，要更新主分支内容到本地仓库"><a href="#项目主分支有变动，要更新主分支内容到本地仓库" class="headerlink" title="项目主分支有变动，要更新主分支内容到本地仓库"></a>项目主分支有变动，要更新主分支内容到本地仓库</h2><ul>
+<li><a href="https://sakurahe.github.io/2018/09/06/git%E6%9B%B4%E6%96%B0%E8%BF%9C%E7%A8%8B%E4%BB%A3%E7%A0%81%E5%88%B0%E6%9C%AC%E5%9C%B0%E4%BB%93%E5%BA%93/" target="_blank" rel="noopener">参考链接</a></li>
+</ul>
+<p>1.与原始项目库同步<br>eg：原始项目库 <a href="https://gitlab.com/dcarchain/app-downloader.git" target="_blank" rel="noopener">https://gitlab.com/dcarchain/app-downloader.git</a><br>先将原始项目库添加到remote中：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote add upstream https://gitlab.com/dcarchain/app-downloader.git</span><br></pre></td></tr></table></figure></p>
+<hr>
+<p>开始同步：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git fetch upstream</span><br><span class="line">git fetch origin master // 同步某个分支</span><br></pre></td></tr></table></figure></p>
+<hr>
+<p>2.将同步的内容与本地项目合并<br>eg：develop是要合并的分支：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git merge upstream/develop</span><br></pre></td></tr></table></figure></p>
+<hr>
+<p>如果同步过程中遇到文件冲突，可以先通过stash保存工作当前进度：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git stash</span><br></pre></td></tr></table></figure></p>
+<hr>
+<p>查看进度列表：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git stash list</span><br></pre></td></tr></table></figure></p>
+<hr>
+<p>工作进度保存后，再次合并<br>合并完成后，将自己的工作内容从 stash list 中提取出来：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git stash pop</span><br></pre></td></tr></table></figure></p>
+<hr>
+<h2 id="提交本地代码到自己fork的仓库，然后申请与主项目合并"><a href="#提交本地代码到自己fork的仓库，然后申请与主项目合并" class="headerlink" title="提交本地代码到自己fork的仓库，然后申请与主项目合并"></a>提交本地代码到自己fork的仓库，然后申请与主项目合并</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git add . </span><br><span class="line">git commit -m <span class="string">'备注'</span> //提交备注</span><br><span class="line">git push</span><br></pre></td></tr></table></figure>
+<p>eg:自己fork的仓库链接： <a href="https://gitlab.com/minitong/app-downloader.git" target="_blank" rel="noopener">https://gitlab.com/minitong/app-downloader.git</a><br>   原仓库链接 ： <a href="https://gitlab.com/dcarchain/app-downloader.git" target="_blank" rel="noopener">https://gitlab.com/dcarchain/app-downloader.git</a></p>
+<hr>
+<p>点击gitlab右上角’Merge requests’申请合并：</p>
+<p><img src="/img/20180912/01.png" alt="实例图片"></p>
+<p>选择要合并的项目链接：</p>
+<p><img src="/img/20180912/02.png" alt="实例图片"></p>
+<p>发起合并申请（选择要合并的项目和分支 以及目标项目和分支）：</p>
+<p><img src="/img/20180912/03.png" alt="实例图片"></p>
+<p>填写合并标题、内容，黄框内选择会收到合并申请的人，提交申请：</p>
+<p><img src="/img/20180912/04.png" alt="实例图片"></p>
+<hr>
+<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><p>查看所有分支<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote -v</span><br></pre></td></tr></table></figure></p>
+<hr>
+<p>新增分支<br>eg:分支地址链接：<a href="https://gitlab.com/dcarchain/app-downloader.git" target="_blank" rel="noopener">https://gitlab.com/dcarchain/app-downloader.git</a>   分支名称：gitlab<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git remote add 分支名称 链接地址</span><br><span class="line">eg: git remote add gitlab https://gitlab.com/dcarchain/app-downloader.git</span><br></pre></td></tr></table></figure></p>
+<hr>
+<p>向某个分支提交 (默认提交到origin分支)<br>eg:向gitlab分支提交代码<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git push 分支名称</span><br><span class="line">eg: git push gitlab</span><br></pre></td></tr></table></figure></p>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/09/12/gitlab/" data-id="cjlyugwt10001ywvdeun4h53f" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/09/12/gitlab/" data-id="cjlywmt2n0001wwvdy3afcof6" class="article-share-link">Share</a>
       
       
     </footer>
@@ -136,7 +178,7 @@
       <ul>
         
           <li>
-            <a href="/2018/09/12/gitlab/">&#39;gitlab&#39;</a>
+            <a href="/2018/09/12/gitlab/">gitlab</a>
           </li>
         
           <li>
