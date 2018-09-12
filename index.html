@@ -62,10 +62,10 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-20180904" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-gitlab" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2018/09/04/20180904/" class="article-date">
-  <time datetime="2018-09-04T02:33:44.000Z" itemprop="datePublished">2018-09-04</time>
+    <a href="/2018/09/12/gitlab/" class="article-date">
+  <time datetime="2018-09-12T07:32:09.000Z" itemprop="datePublished">2018-09-12</time>
 </a>
     
   </div>
@@ -76,7 +76,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/09/04/20180904/">20180904</a>
+      <a class="article-title" href="/2018/09/12/gitlab/">&#39;gitlab&#39;</a>
     </h1>
   
 
@@ -88,7 +88,289 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/09/04/20180904/" data-id="cjln3rhwr00016gvdtr6w7p5n" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/09/12/gitlab/" data-id="cjlyugwt10001ywvdeun4h53f" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-mui总结" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/09/12/mui总结/" class="article-date">
+  <time datetime="2018-09-12T02:22:00.000Z" itemprop="datePublished">2018-09-12</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/09/12/mui总结/">mui总结</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="1-提示框"><a href="#1-提示框" class="headerlink" title="1.提示框"></a>1.提示框</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mui.toast(<span class="string">'提示内容'</span>)</span><br></pre></td></tr></table></figure>
+<hr>
+<h3 id="2-ajax获取数据"><a href="#2-ajax获取数据" class="headerlink" title="2. ajax获取数据"></a>2. ajax获取数据</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">$.ajax(&#123;</span><br><span class="line">  <span class="built_in">type</span>: <span class="string">"get"</span>,    // 接口类型</span><br><span class="line">  url: api + <span class="string">"user/"</span>,  // 接口地址</span><br><span class="line">  data: &#123;&#125;,  // 参数</span><br><span class="line">  beforeSend: <span class="keyword">function</span>(xhr) &#123;</span><br><span class="line">    xhr.setRequestHeader(<span class="string">'x-requested-with'</span>, store.get(<span class="string">"userInfo"</span>).token); // 需要携带的头部</span><br><span class="line">  &#125;,</span><br><span class="line">  async: <span class="literal">true</span>,</span><br><span class="line">  success: <span class="keyword">function</span>(ret) &#123;</span><br><span class="line">    mui.hideLoading();</span><br><span class="line">    <span class="keyword">if</span>(ret.success) &#123;</span><br><span class="line">      mui.toast(<span class="string">'加载成功'</span>);</span><br><span class="line">    &#125; <span class="keyword">else</span>&#123;</span><br><span class="line">      mui.toast(ret.msg);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  error: <span class="keyword">function</span>(error) &#123;</span><br><span class="line">    mui.hideLoading();</span><br><span class="line">    mui.toast(error.responseJSON.msg);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<hr>
+<h3 id="3-页面之间传值"><a href="#3-页面之间传值" class="headerlink" title="3.页面之间传值"></a>3.页面之间传值</h3><p>传值页面：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">mui.openWindow(&#123;</span><br><span class="line">  id: <span class="string">"notice.html"</span>, // 要跳转的页面</span><br><span class="line">  url: <span class="string">"notice.html"</span>, // 要跳转的页面</span><br><span class="line">  extras: &#123;</span><br><span class="line">    key: value // 要传的值</span><br><span class="line">  &#125;,</span><br><span class="line">  show: &#123;</span><br><span class="line">    aniShow: <span class="string">"slide-in-right"</span>, //页面显示动画，默认为<span class="string">"slide-in-right"</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+<p>接收值页面(notice.html)：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">mui.plusReady(<span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">  var self = plus.webview.currentWebview();</span><br><span class="line">	key = self.key;  // 获取传值</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/09/12/mui总结/" data-id="cjlyugwt60002ywvdniwva2g4" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-更新远程代码到本地仓库" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/09/06/更新远程代码到本地仓库/" class="article-date">
+  <time datetime="2018-09-06T02:19:57.000Z" itemprop="datePublished">2018-09-06</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/09/06/更新远程代码到本地仓库/">更新远程代码到本地仓库</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="1-与原始项目库同步"><a href="#1-与原始项目库同步" class="headerlink" title="1. 与原始项目库同步"></a>1. 与原始项目库同步</h3><p>假设 原始项目库是 : <a href="https://gitlab.com/dcarchain/web-admin.git" target="_blank" rel="noopener">https://gitlab.com/dcarchain/web-admin.git</a></p>
+<p>首先确保将原始项目库添加到 remote 中去：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote add upstream https://gitlab.com/dcarchain/web-admin.git</span><br></pre></td></tr></table></figure></p>
+<hr>
+<p>开始同步<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git fetch upstream</span><br></pre></td></tr></table></figure></p>
+<hr>
+<p>或者只同步某个分支：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git fetch origin master</span><br></pre></td></tr></table></figure></p>
+<h3 id="2-将同步的内容与本地项目合并：-develop-是要合并的分支"><a href="#2-将同步的内容与本地项目合并：-develop-是要合并的分支" class="headerlink" title="2. 将同步的内容与本地项目合并：(develop 是要合并的分支)"></a>2. 将同步的内容与本地项目合并：(develop 是要合并的分支)</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git merge upstream/develop</span><br></pre></td></tr></table></figure>
+<p>如果在同步的过程中遇到文件冲突，可以先通过 stash 保存当前工作进度：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git stash</span><br></pre></td></tr></table></figure></p>
+<hr>
+<p>查看进度列表：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git stash list</span><br></pre></td></tr></table></figure></p>
+<hr>
+<p>工作进度保存后，再次合并。</p>
+<p>合并完成后，将自己的工作内容从 stash list 中提取出来：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git stash pop</span><br></pre></td></tr></table></figure></p>
+<p>会提示有哪些文件合并，修改为最新的版本就可以</p>
+<h1 id="参考："><a href="#参考：" class="headerlink" title="参考："></a>参考：</h1><ul>
+<li><a href="https://www.cnblogs.com/chenlogin/p/6592228.html" target="_blank" rel="noopener">git fetch 更新远程代码到本地仓库</a></li>
+<li><a href="https://blog.csdn.net/daguanjia11/article/details/73810577" target="_blank" rel="noopener">使用git stash命令保存和恢复进度</a></li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/09/06/更新远程代码到本地仓库/" data-id="cjlyugwu20006ywvdptfx60zu" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-问题记录" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/09/05/问题记录/" class="article-date">
+  <time datetime="2018-09-05T02:38:27.000Z" itemprop="datePublished">2018-09-05</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/09/05/问题记录/">问题记录</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="1-npm-install安装依赖包后报错-缺少node-sass"><a href="#1-npm-install安装依赖包后报错-缺少node-sass" class="headerlink" title="1.npm install安装依赖包后报错 缺少node-sass"></a>1.npm install安装依赖包后报错 缺少node-sass</h3><h4 id="解决方案："><a href="#解决方案：" class="headerlink" title="解决方案："></a>解决方案：</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm rebuild node-sass</span><br></pre></td></tr></table></figure>
+<p><a href="https://blog.csdn.net/u010429286/article/details/78651917" target="_blank" rel="noopener">参考网址</a></p>
+<hr>
+<h3 id="2-执行git-add-后，-git-warning-LF-will-be-replaced-by-CRLF-in-解决办法"><a href="#2-执行git-add-后，-git-warning-LF-will-be-replaced-by-CRLF-in-解决办法" class="headerlink" title="2. 执行git add . 后， git warning: LF will be replaced by CRLF in 解决办法"></a>2. 执行git add . 后， git warning: LF will be replaced by CRLF in 解决办法</h3><h4 id="解决方案：-1"><a href="#解决方案：-1" class="headerlink" title="解决方案："></a>解决方案：</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config core.autocrlf <span class="literal">false</span></span><br></pre></td></tr></table></figure>
+<p><a href="https://blog.csdn.net/u011935939/article/details/50624791" target="_blank" rel="noopener">参考网址</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/09/05/问题记录/" data-id="cjlyugwu60007ywvdgp14xvvm" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-收藏的不错的网站" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/09/04/收藏的不错的网站/" class="article-date">
+  <time datetime="2018-09-04T03:02:07.000Z" itemprop="datePublished">2018-09-04</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/09/04/收藏的不错的网站/">收藏的不错的网站</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="markdown语言规范"><a href="#markdown语言规范" class="headerlink" title="markdown语言规范"></a>markdown语言规范</h4><p><a href="https://www.jianshu.com/p/fdb5cbdaf244" target="_blank" rel="noopener">https://www.jianshu.com/p/fdb5cbdaf244</a><br><a href="http://xianbai.me/learn-md/article/extension/table.html" target="_blank" rel="noopener">http://xianbai.me/learn-md/article/extension/table.html</a></p>
+<hr>
+<h4 id="jQuery插件库"><a href="#jQuery插件库" class="headerlink" title="jQuery插件库"></a>jQuery插件库</h4><p><a href="http://www.jq22.com/" target="_blank" rel="noopener">http://www.jq22.com/</a></p>
+<hr>
+<h4 id="NativeScript"><a href="#NativeScript" class="headerlink" title="NativeScript"></a>NativeScript</h4><p><a href="https://nativescript-vue.org/en/docs/introduction/" target="_blank" rel="noopener">https://nativescript-vue.org/en/docs/introduction/ </a><br><a href="https://github.com/nativescript-vue/nativescript-vue" target="_blank" rel="noopener">https://github.com/nativescript-vue/nativescript-vue</a></p>
+<hr>
+<h4 id="mui"><a href="#mui" class="headerlink" title="mui"></a>mui</h4><p><a href="http://dev.dcloud.net.cn/mui/ui/#cardview" target="_blank" rel="noopener">http://dev.dcloud.net.cn/mui/ui/#cardview</a></p>
+<hr>
+<h4 id="vue调试工具的安装"><a href="#vue调试工具的安装" class="headerlink" title="vue调试工具的安装"></a>vue调试工具的安装</h4><p><a href="http://www.cnblogs.com/lolDragon/p/6268345.html" target="_blank" rel="noopener">http://www.cnblogs.com/lolDragon/p/6268345.html</a></p>
+<hr>
+<h4 id="阿里巴巴图标库"><a href="#阿里巴巴图标库" class="headerlink" title="阿里巴巴图标库"></a>阿里巴巴图标库</h4><p><a href="http://www.iconfont.cn/" target="_blank" rel="noopener">http://www.iconfont.cn/</a></p>
+<hr>
+<h4 id="Vue-js-Socket-io"><a href="#Vue-js-Socket-io" class="headerlink" title="Vue.js+Socket.io"></a>Vue.js+Socket.io</h4><p><a href="https://github.com/microzz/vue-chat" target="_blank" rel="noopener">https://github.com/microzz/vue-chat </a><br><a href="https://github.com/MetinSeylan/Vue-Socket.io" target="_blank" rel="noopener">https://github.com/MetinSeylan/Vue-Socket.io</a></p>
+<hr>
+<h4 id="搭建博客"><a href="#搭建博客" class="headerlink" title="搭建博客"></a>搭建博客</h4><p><a href="https://www.cnblogs.com/liuxianan/p/build-blog-website-by-hexo-github.html" target="_blank" rel="noopener">https://www.cnblogs.com/liuxianan/p/build-blog-website-by-hexo-github.html</a></p>
+<hr>
+<h4 id="nativescript-playground"><a href="#nativescript-playground" class="headerlink" title="nativescript playground"></a>nativescript playground</h4><p><a href="https://play.nativescript.org/?utm_medium=website&amp;utm_campaign=useownrealestate&amp;utm_source=nativescriptdotcom&amp;utm_content=homepageherolayergreenbutton" target="_blank" rel="noopener">https://play.nativescript.org/?utm_medium=website&amp;utm_campaign=useownrealestate&amp;utm_source=nativescriptdotcom&amp;utm_content=homepageherolayergreenbutton</a></p>
+<hr>
+<h4 id="兼容ios和安卓手机的复制功能"><a href="#兼容ios和安卓手机的复制功能" class="headerlink" title="兼容ios和安卓手机的复制功能"></a>兼容ios和安卓手机的复制功能</h4><p><a href="https://nodefe.com/ios-js-copy/" target="_blank" rel="noopener">https://nodefe.com/ios-js-copy/</a></p>
+<hr>
+<h4 id="图片压缩"><a href="#图片压缩" class="headerlink" title="图片压缩"></a>图片压缩</h4><p><a href="https://tinypng.com/" target="_blank" rel="noopener">https://tinypng.com/</a></p>
+<hr>
+<h4 id="存储store"><a href="#存储store" class="headerlink" title="存储store"></a>存储store</h4><p><a href="https://github.com/marcuswestin/store.js/" target="_blank" rel="noopener">https://github.com/marcuswestin/store.js/</a></p>
+<hr>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/09/04/收藏的不错的网站/" data-id="cjlyugwtj0005ywvdxpj67gqq" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-关于博客" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/09/04/关于博客/" class="article-date">
+  <time datetime="2018-09-04T02:45:22.000Z" itemprop="datePublished">2018-09-04</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/09/04/关于博客/">关于博客</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="创建一个新的博客"><a href="#创建一个新的博客" class="headerlink" title="创建一个新的博客"></a>创建一个新的博客</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new <span class="string">'name'</span></span><br></pre></td></tr></table></figure>
+<hr>
+<h4 id="重新生成blog"><a href="#重新生成blog" class="headerlink" title="重新生成blog"></a>重新生成blog</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo g</span><br></pre></td></tr></table></figure>
+<hr>
+<h4 id="本地运行"><a href="#本地运行" class="headerlink" title="本地运行"></a>本地运行</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo s</span><br></pre></td></tr></table></figure>
+<hr>
+<h4 id="将本地blog部署到github仓库"><a href="#将本地blog部署到github仓库" class="headerlink" title="将本地blog部署到github仓库"></a>将本地blog部署到github仓库</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo d</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/09/04/关于博客/" data-id="cjlyugwtg0004ywvduohr8c8t" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-关于git的命令" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/09/04/关于git的命令/" class="article-date">
+  <time datetime="2018-09-04T02:33:44.000Z" itemprop="datePublished">2018-09-04</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/09/04/关于git的命令/">关于git的命令</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>git add .  //添加所有修改的</p>
+<p>git commit -m ‘hello’  // 备注</p>
+<p>git push   // 用于将本地分支的更新，推送到远程主机</p>
+<p>git remote -v  // 查询git下的项目名称</p>
+<p>git log  //查看提交记录</p>
+<p>git clone + git地址  // 克隆</p>
+<p>git remote add gitlab 链接地址 // 创建分支</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/09/04/关于git的命令/" data-id="cjlyugwtc0003ywvds5rsa352" class="article-share-link">Share</a>
       
       
     </footer>
@@ -149,7 +431,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/08/09/20180809/" data-id="cjln3rhw600006gvddc2gxb3i" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/08/09/20180809/" data-id="cjlyugwsp0000ywvdt1a11bdn" class="article-share-link">Share</a>
       
       
     </footer>
@@ -190,11 +472,23 @@
       <ul>
         
           <li>
-            <a href="/2018/09/04/20180904/">20180904</a>
+            <a href="/2018/09/12/gitlab/">&#39;gitlab&#39;</a>
           </li>
         
           <li>
-            <a href="/2018/08/09/20180809/">20180809</a>
+            <a href="/2018/09/12/mui总结/">mui总结</a>
+          </li>
+        
+          <li>
+            <a href="/2018/09/06/更新远程代码到本地仓库/">更新远程代码到本地仓库</a>
+          </li>
+        
+          <li>
+            <a href="/2018/09/05/问题记录/">问题记录</a>
+          </li>
+        
+          <li>
+            <a href="/2018/09/04/收藏的不错的网站/">收藏的不错的网站</a>
           </li>
         
       </ul>
