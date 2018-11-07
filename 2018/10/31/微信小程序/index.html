@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>&#39;微信小程序&#39; | minitong&#39;s blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="####点击事件1bindtap eg:1&amp;lt;button bindtap=&quot;changeName&quot;&amp;gt; Click me! &amp;lt;/button&amp;gt; ####路由wx.navigateBack 关闭当前页面，返回上一页面或多级页面wx.switchTab    跳转到tabBar页面，并关闭其他所有非tabBar页面wx.navigateTo   保存当前页面，跳转到应用内的某个页">
+<meta property="og:type" content="article">
+<meta property="og:title" content="&#39;微信小程序&#39;">
+<meta property="og:url" content="http://yoursite.com/2018/10/31/微信小程序/index.html">
+<meta property="og:site_name" content="minitong&#39;s blog">
+<meta property="og:description" content="####点击事件1bindtap eg:1&amp;lt;button bindtap=&quot;changeName&quot;&amp;gt; Click me! &amp;lt;/button&amp;gt; ####路由wx.navigateBack 关闭当前页面，返回上一页面或多级页面wx.switchTab    跳转到tabBar页面，并关闭其他所有非tabBar页面wx.navigateTo   保存当前页面，跳转到应用内的某个页">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-11-07T09:30:42.992Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="&#39;微信小程序&#39;">
+<meta name="twitter:description" content="####点击事件1bindtap eg:1&amp;lt;button bindtap=&quot;changeName&quot;&amp;gt; Click me! &amp;lt;/button&amp;gt; ####路由wx.navigateBack 关闭当前页面，返回上一页面或多级页面wx.switchTab    跳转到tabBar页面，并关闭其他所有非tabBar页面wx.navigateTo   保存当前页面，跳转到应用内的某个页">
+  
+    <link rel="alternate" href="/atom.xml" title="minitong&#39;s blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">minitong&#39;s blog</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-微信小程序" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/10/31/微信小程序/" class="article-date">
+  <time datetime="2018-10-31T07:00:40.000Z" itemprop="datePublished">2018-10-31</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      &#39;微信小程序&#39;
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>####点击事件<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bindtap</span><br></pre></td></tr></table></figure></p>
+<p>eg:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;button bindtap=<span class="string">"changeName"</span>&gt; Click me! &lt;/button&gt;</span><br></pre></td></tr></table></figure></p>
+<p>####路由<br>wx.navigateBack 关闭当前页面，返回上一页面或多级页面<br>wx.switchTab    跳转到tabBar页面，并关闭其他所有非tabBar页面<br>wx.navigateTo   保存当前页面，跳转到应用内的某个页面<br>wx.relaunch     关闭所有页面，打开到应用内的某个页面<br>wx.redirectTo   关闭当前页面，跳转到应用内的某个页面</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">wx.navigateTo(&#123;</span><br><span class="line">  url: <span class="string">'test?id=1'</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p>####基本配置<br>app.js<br>app.json<br>app.wxss：设置微信小程序全局样式<br>project.config.json:保存微信开发者工具的配置信息<br>pages：存放所有页面（每个页面包含4个文件–js、json、wxml、wxss）<br>utils：（utils.js–存放工具的函数，达到代码复用目的）</p>
+<p>####列表渲染<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- index.wxml --&gt;</span><br><span class="line">&lt;view&gt;</span><br><span class="line">  &lt;block wx:<span class="keyword">for</span>=<span class="string">"&#123;&#123;items&#125;&#125;"</span> wx:<span class="keyword">for</span>-item=<span class="string">"item"</span> wx:key=<span class="string">"index"</span>&gt;</span><br><span class="line">    &lt;view&gt;&#123;&#123;index&#125;&#125;:&#123;&#123;item.name&#125;&#125;&lt;/view&gt;</span><br><span class="line">  &lt;/block&gt;</span><br><span class="line">&lt;/view&gt;</span><br><span class="line"></span><br><span class="line">// index.js</span><br><span class="line">Page(&#123;</span><br><span class="line">  data:&#123;</span><br><span class="line">    items:[</span><br><span class="line">      &#123;name:<span class="string">"商品A"</span>&#125;,</span><br><span class="line">      &#123;name:<span class="string">"商品B"</span>&#125;,</span><br><span class="line">      &#123;name:<span class="string">"商品C"</span>&#125;</span><br><span class="line">    ]</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/10/31/微信小程序/" data-id="cjo6yrfsg0001b8vdgu9t4cqz" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2018/09/12/gitlab/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">gitlab</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">October 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">September 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2018/10/31/微信小程序/">&#39;微信小程序&#39;</a>
+          </li>
+        
+          <li>
+            <a href="/2018/09/12/gitlab/">gitlab</a>
+          </li>
+        
+          <li>
+            <a href="/2018/09/12/mui总结/">mui总结</a>
+          </li>
+        
+          <li>
+            <a href="/2018/09/06/更新远程代码到本地仓库/">更新远程代码到本地仓库</a>
+          </li>
+        
+          <li>
+            <a href="/2018/09/05/问题记录/">问题记录</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 minitong<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

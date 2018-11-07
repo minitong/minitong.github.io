@@ -62,6 +62,48 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-微信小程序" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/10/31/微信小程序/" class="article-date">
+  <time datetime="2018-10-31T07:00:40.000Z" itemprop="datePublished">2018-10-31</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/10/31/微信小程序/">&#39;微信小程序&#39;</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>####点击事件<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bindtap</span><br></pre></td></tr></table></figure></p>
+<p>eg:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;button bindtap=<span class="string">"changeName"</span>&gt; Click me! &lt;/button&gt;</span><br></pre></td></tr></table></figure></p>
+<p>####路由<br>wx.navigateBack 关闭当前页面，返回上一页面或多级页面<br>wx.switchTab    跳转到tabBar页面，并关闭其他所有非tabBar页面<br>wx.navigateTo   保存当前页面，跳转到应用内的某个页面<br>wx.relaunch     关闭所有页面，打开到应用内的某个页面<br>wx.redirectTo   关闭当前页面，跳转到应用内的某个页面</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">wx.navigateTo(&#123;</span><br><span class="line">  url: <span class="string">'test?id=1'</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p>####基本配置<br>app.js<br>app.json<br>app.wxss：设置微信小程序全局样式<br>project.config.json:保存微信开发者工具的配置信息<br>pages：存放所有页面（每个页面包含4个文件–js、json、wxml、wxss）<br>utils：（utils.js–存放工具的函数，达到代码复用目的）</p>
+<p>####列表渲染<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- index.wxml --&gt;</span><br><span class="line">&lt;view&gt;</span><br><span class="line">  &lt;block wx:<span class="keyword">for</span>=<span class="string">"&#123;&#123;items&#125;&#125;"</span> wx:<span class="keyword">for</span>-item=<span class="string">"item"</span> wx:key=<span class="string">"index"</span>&gt;</span><br><span class="line">    &lt;view&gt;&#123;&#123;index&#125;&#125;:&#123;&#123;item.name&#125;&#125;&lt;/view&gt;</span><br><span class="line">  &lt;/block&gt;</span><br><span class="line">&lt;/view&gt;</span><br><span class="line"></span><br><span class="line">// index.js</span><br><span class="line">Page(&#123;</span><br><span class="line">  data:&#123;</span><br><span class="line">    items:[</span><br><span class="line">      &#123;name:<span class="string">"商品A"</span>&#125;,</span><br><span class="line">      &#123;name:<span class="string">"商品B"</span>&#125;,</span><br><span class="line">      &#123;name:<span class="string">"商品C"</span>&#125;</span><br><span class="line">    ]</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/10/31/微信小程序/" data-id="cjo6yrfsg0001b8vdgu9t4cqz" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-gitlab" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2018/09/12/gitlab/" class="article-date">
@@ -122,7 +164,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/09/12/gitlab/" data-id="cjlyygd0z0001wwvdofcx5hp3" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/09/12/gitlab/" data-id="cjo6yrfum0008b8vds1a4ujtl" class="article-share-link">Share</a>
       
       
     </footer>
@@ -165,7 +207,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/09/12/mui总结/" data-id="cjlyygd150002wwvd2yxrk3h3" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/09/12/mui总结/" data-id="cjo6yrftq0006b8vd5ygqdzpc" class="article-share-link">Share</a>
       
       
     </footer>
@@ -219,7 +261,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/09/06/更新远程代码到本地仓库/" data-id="cjlyygd1h0005wwvd9a2mxqx0" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/09/06/更新远程代码到本地仓库/" data-id="cjo6yrfuj0007b8vdqy8hwv85" class="article-share-link">Share</a>
       
       
     </footer>
@@ -260,7 +302,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/09/05/问题记录/" data-id="cjlyygd290007wwvdnd2mwxyd" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/09/05/问题记录/" data-id="cjo6yrftd0004b8vdwszjjb5b" class="article-share-link">Share</a>
       
       
     </footer>
@@ -320,7 +362,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/09/04/收藏的不错的网站/" data-id="cjlyygd1d0004wwvdzpfn4g30" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/09/04/收藏的不错的网站/" data-id="cjo6yrfth0005b8vdoqzx28em" class="article-share-link">Share</a>
       
       
     </footer>
@@ -362,7 +404,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/09/04/关于博客/" data-id="cjlyygd1k0006wwvdtsyut0jv" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/09/04/关于博客/" data-id="cjo6yrfrs0000b8vdsydl2boa" class="article-share-link">Share</a>
       
       
     </footer>
@@ -408,7 +450,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/09/04/关于git的命令/" data-id="cjlyygd190003wwvdkodyjn5b" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/09/04/关于git的命令/" data-id="cjo6yrfsk0002b8vduuardekj" class="article-share-link">Share</a>
       
       
     </footer>
@@ -469,7 +511,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/08/09/20180809/" data-id="cjlyygd0n0000wwvdc33pzxl5" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/08/09/20180809/" data-id="cjo6yrfso0003b8vdejoxfhgy" class="article-share-link">Share</a>
       
       
     </footer>
@@ -497,7 +539,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">September 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">October 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">September 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a></li></ul>
     </div>
   </div>
 
@@ -508,6 +550,10 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2018/10/31/微信小程序/">&#39;微信小程序&#39;</a>
+          </li>
         
           <li>
             <a href="/2018/09/12/gitlab/">gitlab</a>
@@ -523,10 +569,6 @@
         
           <li>
             <a href="/2018/09/05/问题记录/">问题记录</a>
-          </li>
-        
-          <li>
-            <a href="/2018/09/04/收藏的不错的网站/">收藏的不错的网站</a>
           </li>
         
       </ul>
