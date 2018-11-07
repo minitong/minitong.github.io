@@ -7,17 +7,17 @@
   
   <title>&#39;微信小程序&#39; | minitong&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="####点击事件1bindtap eg:1&amp;lt;button bindtap=&quot;changeName&quot;&amp;gt; Click me! &amp;lt;/button&amp;gt; ####路由wx.navigateBack 关闭当前页面，返回上一页面或多级页面wx.switchTab    跳转到tabBar页面，并关闭其他所有非tabBar页面wx.navigateTo   保存当前页面，跳转到应用内的某个页">
+  <meta name="description" content="1.点击事件1bindtap eg:1&amp;lt;button bindtap=&quot;changeName&quot;&amp;gt; Click me! &amp;lt;/button&amp;gt; 2.路由wx.navigateBack 关闭当前页面，返回上一页面或多级页面wx.switchTab    跳转到tabBar页面，并关闭其他所有非tabBar页面wx.navigateTo   保存当前页面，跳转到应用内的某个页面wx.">
 <meta property="og:type" content="article">
 <meta property="og:title" content="&#39;微信小程序&#39;">
 <meta property="og:url" content="http://yoursite.com/2018/10/31/微信小程序/index.html">
 <meta property="og:site_name" content="minitong&#39;s blog">
-<meta property="og:description" content="####点击事件1bindtap eg:1&amp;lt;button bindtap=&quot;changeName&quot;&amp;gt; Click me! &amp;lt;/button&amp;gt; ####路由wx.navigateBack 关闭当前页面，返回上一页面或多级页面wx.switchTab    跳转到tabBar页面，并关闭其他所有非tabBar页面wx.navigateTo   保存当前页面，跳转到应用内的某个页">
+<meta property="og:description" content="1.点击事件1bindtap eg:1&amp;lt;button bindtap=&quot;changeName&quot;&amp;gt; Click me! &amp;lt;/button&amp;gt; 2.路由wx.navigateBack 关闭当前页面，返回上一页面或多级页面wx.switchTab    跳转到tabBar页面，并关闭其他所有非tabBar页面wx.navigateTo   保存当前页面，跳转到应用内的某个页面wx.">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-11-07T09:30:42.992Z">
+<meta property="og:updated_time" content="2018-11-07T09:33:21.158Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="&#39;微信小程序&#39;">
-<meta name="twitter:description" content="####点击事件1bindtap eg:1&amp;lt;button bindtap=&quot;changeName&quot;&amp;gt; Click me! &amp;lt;/button&amp;gt; ####路由wx.navigateBack 关闭当前页面，返回上一页面或多级页面wx.switchTab    跳转到tabBar页面，并关闭其他所有非tabBar页面wx.navigateTo   保存当前页面，跳转到应用内的某个页">
+<meta name="twitter:description" content="1.点击事件1bindtap eg:1&amp;lt;button bindtap=&quot;changeName&quot;&amp;gt; Click me! &amp;lt;/button&amp;gt; 2.路由wx.navigateBack 关闭当前页面，返回上一页面或多级页面wx.switchTab    跳转到tabBar页面，并关闭其他所有非tabBar页面wx.navigateTo   保存当前页面，跳转到应用内的某个页面wx.">
   
     <link rel="alternate" href="/atom.xml" title="minitong&#39;s blog" type="application/atom+xml">
   
@@ -86,17 +86,17 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>####点击事件<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bindtap</span><br></pre></td></tr></table></figure></p>
+        <h4 id="1-点击事件"><a href="#1-点击事件" class="headerlink" title="1.点击事件"></a>1.点击事件</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bindtap</span><br></pre></td></tr></table></figure>
 <p>eg:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;button bindtap=<span class="string">"changeName"</span>&gt; Click me! &lt;/button&gt;</span><br></pre></td></tr></table></figure></p>
-<p>####路由<br>wx.navigateBack 关闭当前页面，返回上一页面或多级页面<br>wx.switchTab    跳转到tabBar页面，并关闭其他所有非tabBar页面<br>wx.navigateTo   保存当前页面，跳转到应用内的某个页面<br>wx.relaunch     关闭所有页面，打开到应用内的某个页面<br>wx.redirectTo   关闭当前页面，跳转到应用内的某个页面</p>
+<h4 id="2-路由"><a href="#2-路由" class="headerlink" title="2.路由"></a>2.路由</h4><p>wx.navigateBack 关闭当前页面，返回上一页面或多级页面<br>wx.switchTab    跳转到tabBar页面，并关闭其他所有非tabBar页面<br>wx.navigateTo   保存当前页面，跳转到应用内的某个页面<br>wx.relaunch     关闭所有页面，打开到应用内的某个页面<br>wx.redirectTo   关闭当前页面，跳转到应用内的某个页面</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">wx.navigateTo(&#123;</span><br><span class="line">  url: <span class="string">'test?id=1'</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-<p>####基本配置<br>app.js<br>app.json<br>app.wxss：设置微信小程序全局样式<br>project.config.json:保存微信开发者工具的配置信息<br>pages：存放所有页面（每个页面包含4个文件–js、json、wxml、wxss）<br>utils：（utils.js–存放工具的函数，达到代码复用目的）</p>
-<p>####列表渲染<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- index.wxml --&gt;</span><br><span class="line">&lt;view&gt;</span><br><span class="line">  &lt;block wx:<span class="keyword">for</span>=<span class="string">"&#123;&#123;items&#125;&#125;"</span> wx:<span class="keyword">for</span>-item=<span class="string">"item"</span> wx:key=<span class="string">"index"</span>&gt;</span><br><span class="line">    &lt;view&gt;&#123;&#123;index&#125;&#125;:&#123;&#123;item.name&#125;&#125;&lt;/view&gt;</span><br><span class="line">  &lt;/block&gt;</span><br><span class="line">&lt;/view&gt;</span><br><span class="line"></span><br><span class="line">// index.js</span><br><span class="line">Page(&#123;</span><br><span class="line">  data:&#123;</span><br><span class="line">    items:[</span><br><span class="line">      &#123;name:<span class="string">"商品A"</span>&#125;,</span><br><span class="line">      &#123;name:<span class="string">"商品B"</span>&#125;,</span><br><span class="line">      &#123;name:<span class="string">"商品C"</span>&#125;</span><br><span class="line">    ]</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+<h4 id="3-基本配置"><a href="#3-基本配置" class="headerlink" title="3.基本配置"></a>3.基本配置</h4><p>app.js<br>app.json<br>app.wxss：设置微信小程序全局样式<br>project.config.json:保存微信开发者工具的配置信息<br>pages：存放所有页面（每个页面包含4个文件–js、json、wxml、wxss）<br>utils：（utils.js–存放工具的函数，达到代码复用目的）</p>
+<h4 id="4-列表渲染"><a href="#4-列表渲染" class="headerlink" title="4.列表渲染"></a>4.列表渲染</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- index.wxml --&gt;</span><br><span class="line">&lt;view&gt;</span><br><span class="line">  &lt;block wx:<span class="keyword">for</span>=<span class="string">"&#123;&#123;items&#125;&#125;"</span> wx:<span class="keyword">for</span>-item=<span class="string">"item"</span> wx:key=<span class="string">"index"</span>&gt;</span><br><span class="line">    &lt;view&gt;&#123;&#123;index&#125;&#125;:&#123;&#123;item.name&#125;&#125;&lt;/view&gt;</span><br><span class="line">  &lt;/block&gt;</span><br><span class="line">&lt;/view&gt;</span><br><span class="line"></span><br><span class="line">// index.js</span><br><span class="line">Page(&#123;</span><br><span class="line">  data:&#123;</span><br><span class="line">    items:[</span><br><span class="line">      &#123;name:<span class="string">"商品A"</span>&#125;,</span><br><span class="line">      &#123;name:<span class="string">"商品B"</span>&#125;,</span><br><span class="line">      &#123;name:<span class="string">"商品C"</span>&#125;</span><br><span class="line">    ]</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/10/31/微信小程序/" data-id="cjo6yrfsg0001b8vdgu9t4cqz" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/10/31/微信小程序/" data-id="cjo6yv22o0005i8vdshcvmpa0" class="article-share-link">Share</a>
       
       
     </footer>
