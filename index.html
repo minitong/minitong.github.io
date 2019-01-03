@@ -62,6 +62,44 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-vue初始化加载动画" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/01/03/vue初始化加载动画/" class="article-date">
+  <time datetime="2019-01-03T02:51:10.000Z" itemprop="datePublished">2019-01-03</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/01/03/vue初始化加载动画/">&#39;vue初始化加载动画&#39;</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="app-vue"><a href="#app-vue" class="headerlink" title="app.vue"></a>app.vue</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="title">created</span></span> () &#123;</span><br><span class="line">// 删除加载动画demo</span><br><span class="line">  <span class="keyword">if</span> (document.getElementById(<span class="string">'nb-global-spinner'</span>)) &#123;</span><br><span class="line">    document.body.removeChild(document.getElementById(<span class="string">'nb-global-spinner'</span>))</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="index-html"><a href="#index-html" class="headerlink" title="index.html"></a>index.html</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=<span class="string">"nb-global-spinner"</span> class=<span class="string">"spinner"</span>&gt;</span><br><span class="line">  &lt;div class=<span class="string">"blob blob-0"</span>&gt;&lt;/div&gt;</span><br><span class="line">  &lt;div class=<span class="string">"blob blob-1"</span>&gt;&lt;/div&gt;</span><br><span class="line">  &lt;div class=<span class="string">"blob blob-2"</span>&gt;&lt;/div&gt;</span><br><span class="line">  &lt;div class=<span class="string">"blob blob-3"</span>&gt;&lt;/div&gt;</span><br><span class="line">  &lt;div class=<span class="string">"blob blob-4"</span>&gt;&lt;/div&gt;</span><br><span class="line">  &lt;div class=<span class="string">"blob blob-5"</span>&gt;&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;div id=<span class="string">"app"</span>&gt;&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+<h4 id="css"><a href="#css" class="headerlink" title="css"></a>css</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br></pre></td><td class="code"><pre><span class="line">    @-webkit-keyframes spin &#123;</span><br><span class="line">  0% &#123;</span><br><span class="line">    transform: rotate(0)</span><br><span class="line">  &#125;</span><br><span class="line">  100% &#123;</span><br><span class="line">    transform: rotate(360deg)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">@-moz-keyframes spin &#123;</span><br><span class="line">  0% &#123;</span><br><span class="line">    -moz-transform: rotate(0)</span><br><span class="line">  &#125;</span><br><span class="line">  100% &#123;</span><br><span class="line">    -moz-transform: rotate(360deg)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">@keyframes spin &#123;</span><br><span class="line">  0% &#123;</span><br><span class="line">    transform: rotate(0)</span><br><span class="line">  &#125;</span><br><span class="line">  100% &#123;</span><br><span class="line">    transform: rotate(360deg)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">#nb-global-spinner.spinner &#123;</span></span><br><span class="line">  position: fixed;</span><br><span class="line">  top: 0;</span><br><span class="line">  left: 0;</span><br><span class="line">  width: 100%;</span><br><span class="line">  height: 100%;</span><br><span class="line">  z-index: 1003;</span><br><span class="line">  background: <span class="comment">#354077;</span></span><br><span class="line">  overflow: hidden</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">#nb-global-spinner.spinner div:first-child &#123;</span></span><br><span class="line">  display: block;</span><br><span class="line">  position: relative;</span><br><span class="line">  left: 50%;</span><br><span class="line">  top: 50%;</span><br><span class="line">  width: 150px;</span><br><span class="line">  height: 150px;</span><br><span class="line">  margin: -75px 0 0 -75px;</span><br><span class="line">  border-radius: 50%;</span><br><span class="line">  box-shadow: 0 3px 3px 0 rgba(255, 56, 106, 1);</span><br><span class="line">  transform: translate3d(0, 0, 0);</span><br><span class="line">  animation: spin 2s linear infinite</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">#nb-global-spinner.spinner div:first-child:after, .spinner div:first-child:before &#123;</span></span><br><span class="line">  content: <span class="string">''</span>;</span><br><span class="line">  position: absolute;</span><br><span class="line">  border-radius: 50%</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">#nb-global-spinner.spinner div:first-child:before &#123;</span></span><br><span class="line">  top: 5px;</span><br><span class="line">  left: 5px;</span><br><span class="line">  right: 5px;</span><br><span class="line">  bottom: 5px;</span><br><span class="line">  box-shadow: 0 3px 3px 0 rgb(255, 228, 32);</span><br><span class="line">  -webkit-animation: spin 3s linear infinite;</span><br><span class="line">  animation: spin 3s linear infinite</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">#nb-global-spinner.spinner div:first-child:after &#123;</span></span><br><span class="line">  top: 15px;</span><br><span class="line">  left: 15px;</span><br><span class="line">  right: 15px;</span><br><span class="line">  bottom: 15px;</span><br><span class="line">  box-shadow: 0 3px 3px 0 rgba(61, 175, 255, 1);</span><br><span class="line">  animation: spin 1.5s linear infinite</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/01/03/vue初始化加载动画/" data-id="cjqg1v6sr0000dcvdi0gvj8fu" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-微信小程序" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2018/10/31/微信小程序/" class="article-date">
@@ -90,11 +128,22 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">wx.navigateTo(&#123;</span><br><span class="line">  url: <span class="string">'test?id=1'</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
 <h4 id="3-基本配置"><a href="#3-基本配置" class="headerlink" title="3.基本配置"></a>3.基本配置</h4><p>app.js<br>app.json<br>app.wxss：设置微信小程序全局样式<br>project.config.json:保存微信开发者工具的配置信息<br>pages：存放所有页面（每个页面包含4个文件–js、json、wxml、wxss）<br>utils：（utils.js–存放工具的函数，达到代码复用目的）</p>
 <h4 id="4-列表渲染"><a href="#4-列表渲染" class="headerlink" title="4.列表渲染"></a>4.列表渲染</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- index.wxml --&gt;</span><br><span class="line">&lt;view&gt;</span><br><span class="line">  &lt;block wx:<span class="keyword">for</span>=<span class="string">"&#123;&#123;items&#125;&#125;"</span> wx:<span class="keyword">for</span>-item=<span class="string">"item"</span> wx:key=<span class="string">"index"</span>&gt;</span><br><span class="line">    &lt;view&gt;&#123;&#123;index&#125;&#125;:&#123;&#123;item.name&#125;&#125;&lt;/view&gt;</span><br><span class="line">  &lt;/block&gt;</span><br><span class="line">&lt;/view&gt;</span><br><span class="line"></span><br><span class="line">// index.js</span><br><span class="line">Page(&#123;</span><br><span class="line">  data:&#123;</span><br><span class="line">    items:[</span><br><span class="line">      &#123;name:<span class="string">"商品A"</span>&#125;,</span><br><span class="line">      &#123;name:<span class="string">"商品B"</span>&#125;,</span><br><span class="line">      &#123;name:<span class="string">"商品C"</span>&#125;</span><br><span class="line">    ]</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-
+<h4 id="5-条件渲染"><a href="#5-条件渲染" class="headerlink" title="5.条件渲染"></a>5.条件渲染</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- index.wxml --&gt;</span><br><span class="line">&lt;view&gt;今天吃什么？&lt;/view&gt;</span><br><span class="line">&lt;view wx:<span class="keyword">if</span>=<span class="string">"&#123;&#123;condition === 1&#125;&#125;"</span>&gt;</span><br><span class="line">  饺子</span><br><span class="line">&lt;/view&gt;</span><br><span class="line">&lt;view wx:<span class="keyword">elif</span>=<span class="string">"&#123;&#123;condition === 2&#125;&#125;"</span>&gt;</span><br><span class="line">  米饭</span><br><span class="line">&lt;/view&gt;</span><br><span class="line">&lt;view wx:<span class="keyword">else</span>&gt;</span><br><span class="line">  面食</span><br><span class="line">&lt;/view&gt;</span><br><span class="line"></span><br><span class="line">// index.js</span><br><span class="line">Page(&#123;</span><br><span class="line">  data:&#123;</span><br><span class="line">    condition:Math.floor(Math.random()*3+1)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h4 id="6-模板引用"><a href="#6-模板引用" class="headerlink" title="6.模板引用"></a>6.模板引用</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- index.wxml --&gt;</span><br><span class="line">&lt;template name=<span class="string">"tempItem"</span>&gt;</span><br><span class="line">  &lt;view&gt;</span><br><span class="line">    &lt;view&gt;收件人:&#123;&#123;name&#125;&#125;&lt;/view&gt;</span><br><span class="line">    &lt;view&gt;电话:&#123;&#123;phone&#125;&#125;&lt;/view&gt;</span><br><span class="line">    &lt;view&gt;地址:&#123;&#123;address&#125;&#125;&lt;/view&gt;</span><br><span class="line">  &lt;/view&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;template is=<span class="string">"tempItem"</span> data=<span class="string">"&#123;&#123;...item&#125;&#125;"</span>&gt;&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">// index.js</span><br><span class="line">Page(&#123;</span><br><span class="line">  data:&#123;</span><br><span class="line">    item:&#123;</span><br><span class="line">      name:<span class="string">"张三"</span>,</span><br><span class="line">      phone:<span class="string">"12255435435"</span>,</span><br><span class="line">      address:<span class="string">"中国"</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p>文件引用：import include</p>
+<p>import<br>import是用来导入模板。</p>
+<p>include<br>includes用来导入除模板以外的内容。</p>
+<p>eg: import:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- index.wxml --&gt;</span><br><span class="line">&lt;import src=<span class="string">"a.wxml"</span>&gt;&lt;/import&gt;</span><br><span class="line">&lt;template is=<span class="string">"a"</span>&gt;&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- a.wxml --&gt;</span><br><span class="line">&lt;view&gt;out&lt;/view&gt;</span><br><span class="line">&lt;template name=<span class="string">"a"</span>&gt;</span><br><span class="line">  inside</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">显示结果：inside</span><br></pre></td></tr></table></figure></p>
+<p>eg: include:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- index.wxml --&gt;</span><br><span class="line">&lt;include src=<span class="string">"a.wxml"</span>&gt;</span><br><span class="line">&lt;template is=<span class="string">"a"</span>&gt;&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- a.wxml --&gt;</span><br><span class="line">&lt;view&gt;out&lt;/view&gt;</span><br><span class="line">&lt;template name=<span class="string">"a"</span>&gt;</span><br><span class="line">  inside</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">显示结果：out</span><br></pre></td></tr></table></figure></p>
+<h4 id="7-WXSS"><a href="#7-WXSS" class="headerlink" title="7.WXSS"></a>7.WXSS</h4><p>@import 样式导入<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- index.wxml --&gt;</span><br><span class="line">&lt;view style=<span class="string">"color:&#123;&#123;colorValue&#125;&#125;"</span>&gt;hello&lt;/view&gt;</span><br><span class="line"></span><br><span class="line">// index.js</span><br><span class="line">Page(&#123;</span><br><span class="line">  data:&#123;</span><br><span class="line">    colorValue:<span class="string">'red'</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+<h4 id="8-生命周期"><a href="#8-生命周期" class="headerlink" title="8.生命周期"></a>8.生命周期</h4><p>程序生命周期：<br>onLaunch<br>onShow<br>onHide<br>onError<br>页面生命周期：<br>onLoad<br>onShow<br>onReady<br>onHide<br>onUnload</p>
+<h4 id="9-事件"><a href="#9-事件" class="headerlink" title="9.事件"></a>9.事件</h4><p>可捕获事件：<br>touchstart（手指按下屏幕）<br>touchmove（手指按下屏幕移动）<br>touchcancel（手指在屏幕被来电显示之类打断）<br>touchend（手指离开屏幕）<br>tap（手指点击屏幕&lt;350ms）<br>longpress（手指长按屏幕&gt;350ms）*<br>langtap（手指长按屏幕&gt;350ms）</p>
+<p>可冒泡事件：<br>touchstart<br>touchmove<br>touchcancel<br>touchend<br>tap<br>longpress<br>longtap<br>transitionend<br>animationstart<br>animationiteration<br>animationend<br>touchforcechange</p>
+<h4 id="10-API"><a href="#10-API" class="headerlink" title="10.API"></a>10.API</h4>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/10/31/微信小程序/" data-id="cjo6ywfvr0005ocvdjltvubey" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/10/31/微信小程序/" data-id="cjqg1v6ug0004dcvdwgcq92ms" class="article-share-link">Share</a>
       
       
     </footer>
@@ -164,7 +213,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/09/12/gitlab/" data-id="cjo6ywfva0001ocvdtuqp97l8" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/09/12/gitlab/" data-id="cjqg1v6v80009dcvd64ltxbj7" class="article-share-link">Share</a>
       
       
     </footer>
@@ -207,7 +256,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/09/12/mui总结/" data-id="cjo6ywfvf0002ocvdhldzmzbi" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/09/12/mui总结/" data-id="cjqg1v6v50008dcvdwcvmzodk" class="article-share-link">Share</a>
       
       
     </footer>
@@ -261,7 +310,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/09/06/更新远程代码到本地仓库/" data-id="cjo6ywfvx0007ocvda9zszj7j" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/09/06/更新远程代码到本地仓库/" data-id="cjqg1v6uc0003dcvdkao31m1p" class="article-share-link">Share</a>
       
       
     </footer>
@@ -298,11 +347,13 @@
 <hr>
 <h3 id="2-执行git-add-后，-git-warning-LF-will-be-replaced-by-CRLF-in-解决办法"><a href="#2-执行git-add-后，-git-warning-LF-will-be-replaced-by-CRLF-in-解决办法" class="headerlink" title="2. 执行git add . 后， git warning: LF will be replaced by CRLF in 解决办法"></a>2. 执行git add . 后， git warning: LF will be replaced by CRLF in 解决办法</h3><h4 id="解决方案：-1"><a href="#解决方案：-1" class="headerlink" title="解决方案："></a>解决方案：</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config core.autocrlf <span class="literal">false</span></span><br></pre></td></tr></table></figure>
 <p><a href="https://blog.csdn.net/u011935939/article/details/50624791" target="_blank" rel="noopener">参考网址</a></p>
+<p>mock-server：<br>json-server –watch mock.json</p>
+<p>vue-cli 新创建的项目启动报错 Module build failed: Error: “extract-text-webpack-plugin” ：<br><a href="https://my.oschina.net/dkvirus/blog/1583258" target="_blank" rel="noopener">https://my.oschina.net/dkvirus/blog/1583258</a></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/09/05/问题记录/" data-id="cjo6ywfwl0008ocvd726265us" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/09/05/问题记录/" data-id="cjqg1v6up0006dcvdfdmjkrdk" class="article-share-link">Share</a>
       
       
     </footer>
@@ -362,7 +413,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/09/04/收藏的不错的网站/" data-id="cjo6ywfvu0006ocvdlnl6y98g" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/09/04/收藏的不错的网站/" data-id="cjqg1v6us0007dcvdb84pp661" class="article-share-link">Share</a>
       
       
     </footer>
@@ -404,7 +455,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/09/04/关于博客/" data-id="cjo6ywfvk0003ocvd5fsbd7qm" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/09/04/关于博客/" data-id="cjqg1v6u80002dcvd50nx3sij" class="article-share-link">Share</a>
       
       
     </footer>
@@ -450,7 +501,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/09/04/关于git的命令/" data-id="cjo6ywfvn0004ocvdyf3z2ztx" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/09/04/关于git的命令/" data-id="cjqg1v6u40001dcvd7by25a2z" class="article-share-link">Share</a>
       
       
     </footer>
@@ -507,11 +558,12 @@
 <h2 id="二、使用android-studio创建安卓虚拟器"><a href="#二、使用android-studio创建安卓虚拟器" class="headerlink" title="二、使用android studio创建安卓虚拟器"></a>二、使用android studio创建安卓虚拟器</h2><h4 id="1-打开Android-studio，在工具栏中找到AVD-manager的图标，点击打开AVD管理器"><a href="#1-打开Android-studio，在工具栏中找到AVD-manager的图标，点击打开AVD管理器" class="headerlink" title="1.打开Android studio，在工具栏中找到AVD manager的图标，点击打开AVD管理器"></a>1.打开Android studio，在工具栏中找到AVD manager的图标，点击打开AVD管理器</h4><p><img src="/img/20180809/pic3.png" alt="实例图片"></p>
 <h4 id="2-点击创建-create-virtual-device"><a href="#2-点击创建-create-virtual-device" class="headerlink" title="2.点击创建 create virtual device"></a>2.点击创建 create virtual device</h4><h4 id="3-选择一款手机，点击next"><a href="#3-选择一款手机，点击next" class="headerlink" title="3.选择一款手机，点击next"></a>3.选择一款手机，点击next</h4><p><img src="/img/20180809/pic4.png" alt="实例图片"><br>Download其中一个，之后finish<br><img src="/img/20180809/pic5.png" alt="实例图片"></p>
 <h4 id="4-点击绿色三角运行"><a href="#4-点击绿色三角运行" class="headerlink" title="4.点击绿色三角运行"></a>4.点击绿色三角运行</h4><p><img src="/img/20180809/pic6.png" alt="实例图片"></p>
+<p>创建vue项目<br>vue init webpack test</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/08/09/20180809/" data-id="cjo6ywfuy0000ocvd724v9r5h" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/08/09/20180809/" data-id="cjqg1v6uj0005dcvdc5p90m7b" class="article-share-link">Share</a>
       
       
     </footer>
@@ -539,7 +591,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">October 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">September 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">January 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">October 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">September 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a></li></ul>
     </div>
   </div>
 
@@ -550,6 +602,10 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2019/01/03/vue初始化加载动画/">&#39;vue初始化加载动画&#39;</a>
+          </li>
         
           <li>
             <a href="/2018/10/31/微信小程序/">&#39;微信小程序&#39;</a>
@@ -567,10 +623,6 @@
             <a href="/2018/09/06/更新远程代码到本地仓库/">更新远程代码到本地仓库</a>
           </li>
         
-          <li>
-            <a href="/2018/09/05/问题记录/">问题记录</a>
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -583,7 +635,7 @@
   
   <div class="outer">
     <div id="footer-info" class="inner">
-      &copy; 2018 minitong<br>
+      &copy; 2019 minitong<br>
       Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>

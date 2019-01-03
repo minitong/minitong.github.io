@@ -14,7 +14,7 @@
 <meta property="og:site_name" content="minitong&#39;s blog">
 <meta property="og:description" content="1.点击事件1bindtap eg:1&amp;lt;button bindtap=&quot;changeName&quot;&amp;gt; Click me! &amp;lt;/button&amp;gt; 2.路由wx.navigateBack 关闭当前页面，返回上一页面或多级页面wx.switchTab    跳转到tabBar页面，并关闭其他所有非tabBar页面wx.navigateTo   保存当前页面，跳转到应用内的某个页面wx.">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-11-07T09:33:21.158Z">
+<meta property="og:updated_time" content="2018-11-20T01:57:49.097Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="&#39;微信小程序&#39;">
 <meta name="twitter:description" content="1.点击事件1bindtap eg:1&amp;lt;button bindtap=&quot;changeName&quot;&amp;gt; Click me! &amp;lt;/button&amp;gt; 2.路由wx.navigateBack 关闭当前页面，返回上一页面或多级页面wx.switchTab    跳转到tabBar页面，并关闭其他所有非tabBar页面wx.navigateTo   保存当前页面，跳转到应用内的某个页面wx.">
@@ -92,11 +92,22 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">wx.navigateTo(&#123;</span><br><span class="line">  url: <span class="string">'test?id=1'</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
 <h4 id="3-基本配置"><a href="#3-基本配置" class="headerlink" title="3.基本配置"></a>3.基本配置</h4><p>app.js<br>app.json<br>app.wxss：设置微信小程序全局样式<br>project.config.json:保存微信开发者工具的配置信息<br>pages：存放所有页面（每个页面包含4个文件–js、json、wxml、wxss）<br>utils：（utils.js–存放工具的函数，达到代码复用目的）</p>
 <h4 id="4-列表渲染"><a href="#4-列表渲染" class="headerlink" title="4.列表渲染"></a>4.列表渲染</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- index.wxml --&gt;</span><br><span class="line">&lt;view&gt;</span><br><span class="line">  &lt;block wx:<span class="keyword">for</span>=<span class="string">"&#123;&#123;items&#125;&#125;"</span> wx:<span class="keyword">for</span>-item=<span class="string">"item"</span> wx:key=<span class="string">"index"</span>&gt;</span><br><span class="line">    &lt;view&gt;&#123;&#123;index&#125;&#125;:&#123;&#123;item.name&#125;&#125;&lt;/view&gt;</span><br><span class="line">  &lt;/block&gt;</span><br><span class="line">&lt;/view&gt;</span><br><span class="line"></span><br><span class="line">// index.js</span><br><span class="line">Page(&#123;</span><br><span class="line">  data:&#123;</span><br><span class="line">    items:[</span><br><span class="line">      &#123;name:<span class="string">"商品A"</span>&#125;,</span><br><span class="line">      &#123;name:<span class="string">"商品B"</span>&#125;,</span><br><span class="line">      &#123;name:<span class="string">"商品C"</span>&#125;</span><br><span class="line">    ]</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-
+<h4 id="5-条件渲染"><a href="#5-条件渲染" class="headerlink" title="5.条件渲染"></a>5.条件渲染</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- index.wxml --&gt;</span><br><span class="line">&lt;view&gt;今天吃什么？&lt;/view&gt;</span><br><span class="line">&lt;view wx:<span class="keyword">if</span>=<span class="string">"&#123;&#123;condition === 1&#125;&#125;"</span>&gt;</span><br><span class="line">  饺子</span><br><span class="line">&lt;/view&gt;</span><br><span class="line">&lt;view wx:<span class="keyword">elif</span>=<span class="string">"&#123;&#123;condition === 2&#125;&#125;"</span>&gt;</span><br><span class="line">  米饭</span><br><span class="line">&lt;/view&gt;</span><br><span class="line">&lt;view wx:<span class="keyword">else</span>&gt;</span><br><span class="line">  面食</span><br><span class="line">&lt;/view&gt;</span><br><span class="line"></span><br><span class="line">// index.js</span><br><span class="line">Page(&#123;</span><br><span class="line">  data:&#123;</span><br><span class="line">    condition:Math.floor(Math.random()*3+1)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h4 id="6-模板引用"><a href="#6-模板引用" class="headerlink" title="6.模板引用"></a>6.模板引用</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- index.wxml --&gt;</span><br><span class="line">&lt;template name=<span class="string">"tempItem"</span>&gt;</span><br><span class="line">  &lt;view&gt;</span><br><span class="line">    &lt;view&gt;收件人:&#123;&#123;name&#125;&#125;&lt;/view&gt;</span><br><span class="line">    &lt;view&gt;电话:&#123;&#123;phone&#125;&#125;&lt;/view&gt;</span><br><span class="line">    &lt;view&gt;地址:&#123;&#123;address&#125;&#125;&lt;/view&gt;</span><br><span class="line">  &lt;/view&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;template is=<span class="string">"tempItem"</span> data=<span class="string">"&#123;&#123;...item&#125;&#125;"</span>&gt;&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">// index.js</span><br><span class="line">Page(&#123;</span><br><span class="line">  data:&#123;</span><br><span class="line">    item:&#123;</span><br><span class="line">      name:<span class="string">"张三"</span>,</span><br><span class="line">      phone:<span class="string">"12255435435"</span>,</span><br><span class="line">      address:<span class="string">"中国"</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p>文件引用：import include</p>
+<p>import<br>import是用来导入模板。</p>
+<p>include<br>includes用来导入除模板以外的内容。</p>
+<p>eg: import:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- index.wxml --&gt;</span><br><span class="line">&lt;import src=<span class="string">"a.wxml"</span>&gt;&lt;/import&gt;</span><br><span class="line">&lt;template is=<span class="string">"a"</span>&gt;&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- a.wxml --&gt;</span><br><span class="line">&lt;view&gt;out&lt;/view&gt;</span><br><span class="line">&lt;template name=<span class="string">"a"</span>&gt;</span><br><span class="line">  inside</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">显示结果：inside</span><br></pre></td></tr></table></figure></p>
+<p>eg: include:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- index.wxml --&gt;</span><br><span class="line">&lt;include src=<span class="string">"a.wxml"</span>&gt;</span><br><span class="line">&lt;template is=<span class="string">"a"</span>&gt;&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- a.wxml --&gt;</span><br><span class="line">&lt;view&gt;out&lt;/view&gt;</span><br><span class="line">&lt;template name=<span class="string">"a"</span>&gt;</span><br><span class="line">  inside</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">显示结果：out</span><br></pre></td></tr></table></figure></p>
+<h4 id="7-WXSS"><a href="#7-WXSS" class="headerlink" title="7.WXSS"></a>7.WXSS</h4><p>@import 样式导入<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- index.wxml --&gt;</span><br><span class="line">&lt;view style=<span class="string">"color:&#123;&#123;colorValue&#125;&#125;"</span>&gt;hello&lt;/view&gt;</span><br><span class="line"></span><br><span class="line">// index.js</span><br><span class="line">Page(&#123;</span><br><span class="line">  data:&#123;</span><br><span class="line">    colorValue:<span class="string">'red'</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+<h4 id="8-生命周期"><a href="#8-生命周期" class="headerlink" title="8.生命周期"></a>8.生命周期</h4><p>程序生命周期：<br>onLaunch<br>onShow<br>onHide<br>onError<br>页面生命周期：<br>onLoad<br>onShow<br>onReady<br>onHide<br>onUnload</p>
+<h4 id="9-事件"><a href="#9-事件" class="headerlink" title="9.事件"></a>9.事件</h4><p>可捕获事件：<br>touchstart（手指按下屏幕）<br>touchmove（手指按下屏幕移动）<br>touchcancel（手指在屏幕被来电显示之类打断）<br>touchend（手指离开屏幕）<br>tap（手指点击屏幕&lt;350ms）<br>longpress（手指长按屏幕&gt;350ms）*<br>langtap（手指长按屏幕&gt;350ms）</p>
+<p>可冒泡事件：<br>touchstart<br>touchmove<br>touchcancel<br>touchend<br>tap<br>longpress<br>longtap<br>transitionend<br>animationstart<br>animationiteration<br>animationend<br>touchforcechange</p>
+<h4 id="10-API"><a href="#10-API" class="headerlink" title="10.API"></a>10.API</h4>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/10/31/微信小程序/" data-id="cjo6ywfvr0005ocvdjltvubey" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/10/31/微信小程序/" data-id="cjqg1v6ug0004dcvdwgcq92ms" class="article-share-link">Share</a>
       
       
     </footer>
@@ -104,6 +115,15 @@
   
     
 <nav id="article-nav">
+  
+    <a href="/2019/01/03/vue初始化加载动画/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          &#39;vue初始化加载动画&#39;
+        
+      </div>
+    </a>
   
   
     <a href="/2018/09/12/gitlab/" id="article-nav-older" class="article-nav-link-wrap">
@@ -132,7 +152,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">October 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">September 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">January 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">October 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">September 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a></li></ul>
     </div>
   </div>
 
@@ -143,6 +163,10 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2019/01/03/vue初始化加载动画/">&#39;vue初始化加载动画&#39;</a>
+          </li>
         
           <li>
             <a href="/2018/10/31/微信小程序/">&#39;微信小程序&#39;</a>
@@ -160,10 +184,6 @@
             <a href="/2018/09/06/更新远程代码到本地仓库/">更新远程代码到本地仓库</a>
           </li>
         
-          <li>
-            <a href="/2018/09/05/问题记录/">问题记录</a>
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -176,7 +196,7 @@
   
   <div class="outer">
     <div id="footer-info" class="inner">
-      &copy; 2018 minitong<br>
+      &copy; 2019 minitong<br>
       Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
