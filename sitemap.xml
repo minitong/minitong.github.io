@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/2019/01/03/es6/</loc>
+    
+    <lastmod>2019-01-03T10:05:14.193Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2019/01/03/vue%E5%88%9D%E5%A7%8B%E5%8C%96%E5%8A%A0%E8%BD%BD%E5%8A%A8%E7%94%BB/</loc>
     
     <lastmod>2019-01-03T03:25:10.159Z</lastmod>
