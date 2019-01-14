@@ -113,7 +113,20 @@
 </li>
 </ul>
 <h4 id="5-global-对象"><a href="#5-global-对象" class="headerlink" title="5.global 对象"></a>5.global 对象</h4><hr>
-
+<h3 id="二、变量的解构赋值"><a href="#二、变量的解构赋值" class="headerlink" title="二、变量的解构赋值"></a>二、变量的解构赋值</h3><h4 id="1-数组的解构赋值"><a href="#1-数组的解构赋值" class="headerlink" title="1.数组的解构赋值"></a>1.数组的解构赋值</h4><ul>
+<li><p>模式匹配</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">let</span> [a, b, c] = [1, 2, 3];</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>等号右边必须是数组，否则会报错</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">// 报错</span><br><span class="line"><span class="built_in">let</span> [foo] = 1;</span><br><span class="line"><span class="built_in">let</span> [foo] = <span class="literal">false</span>;</span><br><span class="line"><span class="built_in">let</span> [foo] = NaN;</span><br><span class="line"><span class="built_in">let</span> [foo] = undefined;</span><br><span class="line"><span class="built_in">let</span> [foo] = null;</span><br><span class="line"><span class="built_in">let</span> [foo] = &#123;&#125;;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="2-对象的解构赋值"><a href="#2-对象的解构赋值" class="headerlink" title="2.对象的解构赋值"></a>2.对象的解构赋值</h4><ul>
+<li>数组的元素是按次序排列的，变量的取值由它的位置决定；而对象的属性没有次序，变量必须与属性同名，才能取到正确的值。<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">let</span> &#123; bar, foo &#125; = &#123; foo: <span class="string">"aaa"</span>, bar: <span class="string">"bbb"</span> &#125;;</span><br><span class="line">foo // <span class="string">"aaa"</span></span><br><span class="line">bar // <span class="string">"bbb"</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">let</span> &#123; baz &#125; = &#123; foo: <span class="string">"aaa"</span>, bar: <span class="string">"bbb"</span> &#125;;</span><br><span class="line">baz // undefined</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="3-字符串的解构赋值"><a href="#3-字符串的解构赋值" class="headerlink" title="3.字符串的解构赋值"></a>3.字符串的解构赋值</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">const [a, b, c, d, e] = <span class="string">'hello'</span>;</span><br><span class="line">a // <span class="string">"h"</span></span><br><span class="line">b // <span class="string">"e"</span></span><br><span class="line">c // <span class="string">"l"</span></span><br><span class="line">d // <span class="string">"l"</span></span><br><span class="line">e // <span class="string">"o"</span></span><br></pre></td></tr></table></figure>
+<h3 id="三、字符串的扩展"><a href="#三、字符串的扩展" class="headerlink" title="三、字符串的扩展"></a>三、字符串的扩展</h3>
       
     </div>
     <footer class="article-footer">
@@ -240,12 +253,12 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="开始一个项目"><a href="#开始一个项目" class="headerlink" title="开始一个项目"></a>开始一个项目</h2><p>先fork gitlab上项目<br>复制链接，克隆到本地：<br>eg: 项目链接地址：<a href="https://gitlab.com/dcarchain/app-downloader.git" target="_blank" rel="noopener">https://gitlab.com/dcarchain/app-downloader.git</a>  本地文件名：app-downloader<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> 链接地址 文件名</span><br><span class="line">eg: git <span class="built_in">clone</span> https://gitlab.com/dcarchain/app-downloader.git app-downloader</span><br></pre></td></tr></table></figure></p>
+        <h2 id="开始一个项目"><a href="#开始一个项目" class="headerlink" title="开始一个项目"></a>开始一个项目</h2><p>先fork gitlab上项目<br>复制链接，克隆到本地：<br>eg: 项目链接地址：<address>  本地文件名：app-downloader<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> 链接地址 文件名</span><br><span class="line">eg: git <span class="built_in">clone</span> &lt;address&gt; app-downloader</span><br></pre></td></tr></table></figure></address></p>
 <hr>
 <h2 id="项目主分支有变动，要更新主分支内容到本地仓库"><a href="#项目主分支有变动，要更新主分支内容到本地仓库" class="headerlink" title="项目主分支有变动，要更新主分支内容到本地仓库"></a>项目主分支有变动，要更新主分支内容到本地仓库</h2><ul>
 <li><a href="https://sakurahe.github.io/2018/09/06/git%E6%9B%B4%E6%96%B0%E8%BF%9C%E7%A8%8B%E4%BB%A3%E7%A0%81%E5%88%B0%E6%9C%AC%E5%9C%B0%E4%BB%93%E5%BA%93/" target="_blank" rel="noopener">参考链接</a></li>
 </ul>
-<p>1.与原始项目库同步<br>eg：原始项目库 <a href="https://gitlab.com/dcarchain/app-downloader.git" target="_blank" rel="noopener">https://gitlab.com/dcarchain/app-downloader.git</a><br>先将原始项目库添加到remote中：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote add upstream https://gitlab.com/dcarchain/app-downloader.git</span><br></pre></td></tr></table></figure></p>
+<p>1.与原始项目库同步<br>eg：原始项目库 <address><br>先将原始项目库添加到remote中：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote add upstream &lt;address&gt;</span><br></pre></td></tr></table></figure></address></p>
 <hr>
 <p>开始同步：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git fetch upstream</span><br><span class="line">git fetch origin master // 同步某个分支</span><br></pre></td></tr></table></figure></p>
 <hr>
@@ -258,20 +271,20 @@
 <p>工作进度保存后，再次合并<br>合并完成后，将自己的工作内容从 stash list 中提取出来：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git stash pop</span><br></pre></td></tr></table></figure></p>
 <hr>
 <h2 id="提交本地代码到自己fork的仓库，然后申请与主项目合并"><a href="#提交本地代码到自己fork的仓库，然后申请与主项目合并" class="headerlink" title="提交本地代码到自己fork的仓库，然后申请与主项目合并"></a>提交本地代码到自己fork的仓库，然后申请与主项目合并</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git add . </span><br><span class="line">git commit -m <span class="string">'备注'</span> //提交备注</span><br><span class="line">git push</span><br></pre></td></tr></table></figure>
-<p>eg:自己fork的仓库链接： <a href="https://gitlab.com/minitong/app-downloader.git" target="_blank" rel="noopener">https://gitlab.com/minitong/app-downloader.git</a><br>   原仓库链接 ： <a href="https://gitlab.com/dcarchain/app-downloader.git" target="_blank" rel="noopener">https://gitlab.com/dcarchain/app-downloader.git</a></p>
+<p>eg:自己fork的仓库链接： address<br>   原仓库链接 ： <address></address></p>
 <hr>
 <p>点击gitlab右上角’Merge requests’申请合并：</p>
-<p><img src="/img/20180912/01.png" alt="实例图片"></p>
+<!-- ![实例图片](/img/20180912/01.png) -->
 <p>选择要合并的项目链接：</p>
-<p><img src="/img/20180912/02.png" alt="实例图片"></p>
+<!-- ![实例图片](/img/20180912/02.png) -->
 <p>发起合并申请（选择要合并的项目和分支 以及目标项目和分支）：</p>
-<p><img src="/img/20180912/03.png" alt="实例图片"></p>
+<!-- ![实例图片](/img/20180912/03.png) -->
 <p>填写合并标题、内容，黄框内选择会收到合并申请的人，提交申请：</p>
-<p><img src="/img/20180912/04.png" alt="实例图片"></p>
+<!-- ![实例图片](/img/20180912/04.png) -->
 <hr>
 <h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><p>查看所有分支<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote -v</span><br></pre></td></tr></table></figure></p>
 <hr>
-<p>新增分支<br>eg:分支地址链接：<a href="https://gitlab.com/dcarchain/app-downloader.git" target="_blank" rel="noopener">https://gitlab.com/dcarchain/app-downloader.git</a>   分支名称：gitlab<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git remote add 分支名称 链接地址</span><br><span class="line">eg: git remote add gitlab https://gitlab.com/dcarchain/app-downloader.git</span><br></pre></td></tr></table></figure></p>
+<p>新增分支<br>eg:分支地址链接：<address>   分支名称：gitlab<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git remote add 分支名称 链接地址</span><br><span class="line">eg: git remote add gitlab &lt;address&gt;</span><br></pre></td></tr></table></figure></address></p>
 <hr>
 <p>向某个分支提交 (默认提交到origin分支)<br>eg:向gitlab分支提交代码<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git push 分支名称</span><br><span class="line">eg: git push gitlab</span><br></pre></td></tr></table></figure></p>
 
@@ -353,8 +366,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="1-与原始项目库同步"><a href="#1-与原始项目库同步" class="headerlink" title="1. 与原始项目库同步"></a>1. 与原始项目库同步</h3><p>假设 原始项目库是 : <a href="https://gitlab.com/dcarchain/web-admin.git" target="_blank" rel="noopener">https://gitlab.com/dcarchain/web-admin.git</a></p>
-<p>首先确保将原始项目库添加到 remote 中去：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote add upstream https://gitlab.com/dcarchain/web-admin.git</span><br></pre></td></tr></table></figure></p>
+        <h3 id="1-与原始项目库同步"><a href="#1-与原始项目库同步" class="headerlink" title="1. 与原始项目库同步"></a>1. 与原始项目库同步</h3><p>假设 原始项目库是 : <project address=""></project></p>
+<p>首先确保将原始项目库添加到 remote 中去：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote add upstream &lt;project address&gt;</span><br></pre></td></tr></table></figure></p>
 <hr>
 <p>开始同步<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git fetch upstream</span><br></pre></td></tr></table></figure></p>
 <hr>
@@ -414,6 +427,7 @@
 <p><a href="https://blog.csdn.net/u011935939/article/details/50624791" target="_blank" rel="noopener">参考网址</a></p>
 <p>mock-server：<br>json-server –watch mock.json</p>
 <p>vue-cli 新创建的项目启动报错 Module build failed: Error: “extract-text-webpack-plugin” ：<br><a href="https://my.oschina.net/dkvirus/blog/1583258" target="_blank" rel="noopener">https://my.oschina.net/dkvirus/blog/1583258</a></p>
+<h3 id="3-vue-bootstrap占用空间大，modal（模态框）可单页面引入"><a href="#3-vue-bootstrap占用空间大，modal（模态框）可单页面引入" class="headerlink" title="3.vue-bootstrap占用空间大，modal（模态框）可单页面引入"></a>3.vue-bootstrap占用空间大，modal（模态框）可单页面引入</h3><h4 id="解决方案：-2"><a href="#解决方案：-2" class="headerlink" title="解决方案："></a>解决方案：</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">import bModal from <span class="string">'bootstrap-vue/es/components/modal/modal'</span></span><br><span class="line">components: &#123;</span><br><span class="line">  bModal</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
 
       
     </div>
